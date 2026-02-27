@@ -10,8 +10,11 @@ def get_ip_data():
         address = fc.call_action("WANIPConn1", "GetExternalIPAddress")[
             "NewExternalIPAddress"
         ]
+        ipv6address = fc.call_action("WANIPConn1", "X_AVM_DE_GetExternalIPv6Address")[
+            'NewExternalIPv6Address']
     except IndexError:
         address = "0.0.0.0"
+        ipv6address = "0:0:0:0:0:0:0:0"
     upstream = fc.call_action("WANCommonInterfaceConfig", "GetCommonLinkProperties")[
         "NewX_AVM-DE_UpstreamCurrentUtilization"
     ].split(",")[0]
@@ -22,6 +25,7 @@ def get_ip_data():
         "status": status,
         "uptime": uptime,
         "address": address,
+        "ipv6address": ipv6address,
         "upstream": upstream,
         "downstream": downstream,
     }
