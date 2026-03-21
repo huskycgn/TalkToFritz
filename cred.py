@@ -1,0 +1,7 @@
+USER = "Lehmann"
+PASS = "ZdW*7bp@J29&@DzWjo"
+DB_HOST = "192.168.178.117"
+DB = "network"
+TABLE = "fritzbox"
+DB_USER = "dbuser"
+DB_PASS = "jjslappn!8"

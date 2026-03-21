@@ -3,7 +3,7 @@ from cred import USER, PASS
 
 
 def get_ip_data():
-    fc = FritzConnection(address="192.168.178.1", user=USER, password=PASS)
+    fc = FritzConnection(address="192.168.100.1", user=USER, password=PASS)
     status = fc.call_action("WANIPConn1", "GetStatusInfo")["NewConnectionStatus"]
     uptime = fc.call_action("WANIPConn1", "GetStatusInfo")["NewUptime"]
     try:
